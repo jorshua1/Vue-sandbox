@@ -45,6 +45,32 @@
             deleteNinja: function () {
                 this.ninjas.pop();
             }
+        },
+        // lifecycle hooks
+        beforeCreate(){
+            //esencialmente son funciones antes de que se cree
+            alert('beforeCreate');
+        },
+        created(){
+            // nos indica que el componente ha sido creada
+            // este es un buen punto para obtener datos desde una base de datos en lugar del ciclo mounted
+            alert('created'); 
+        }, 
+        beforeMount(){
+            alert('beforeMount');
+        },
+        mounted(){
+            // es un buen lugar para manipula el DOM luego de que sea montado
+            alert('mounted');
+            //aqui es donde se termina de mostrar los elementos
+        },
+        beforeUpdate(){
+            //si una vista posee un cambio entonces ocurrira aqui
+            alert('beforeUpdate');
+        },
+        updated(){
+            // ocurre luego de que el DOM ha finalizado de actualizar y se vuelve a renderizar
+            alert('updated');
         }
     }
 </script>
