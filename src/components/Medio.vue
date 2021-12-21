@@ -1,6 +1,8 @@
 <template>
     <div id="ninjas">
         <ul>
+            <!-- Al ser este componente un elemento hijo del componente App el recibe los datos enviados por medio del prop en la etiqueta referenciada de este componente, dado a que esta recibiendo los datos el ya puede hacer uso de estos y mostrarlos como sea necesario
+            Solo puede mostrar y no modificar ya que el dueño de dichos datos es el componente padre -->
             <li v-for="ninja in ninjas" :key="ninja" v-on:click="ninja.show=!ninja.show">
                 <h2>Name: {{ninja.name}}</h2>
                 <h3 v-show="ninja.show">speciality: {{ninja.speciality}} </h3>
@@ -10,40 +12,20 @@
 </template>
 <script>
     export default {
+        //Recibimos los datos del componente padre y podremos usarlos como si los datos estuvieran
+        // declarados directamente en este componente
+        // props: ['ninjas'], con esto podemos hacer uso del prop con cualquier tipo de dato 
+        props:{ //al generar el prop como un objeto podemos validar el tipo de dato que queremos recibir
+            ninjas:{
+                //con esto indicamos que los datos que provienen del prop padre deben ser de tipo array dado a que si no es asi entonces la consola enseñara que hay un error indicando el tipo de dato que recibio junto al tipo de dato que esperaba
+                type: Array,
+                //con esto obligamos a que el  tipo de dato sea si o si el ingresado en el tipo 
+                required: true
+            }
+        },
         data() {
             return {
-                ninjas: [{
-                        name: 'Ryu',
-                        speciality: 'Vue Components',
-                        show: false
-                    },
-                    {
-                        name: 'Crystal',
-                        speciality: 'HTML Wizardry',
-                        show: true
-                    },
-                    {
-                        name: 'Hitoshi',
-                        speciality: 'Click Events',
-                        show: false
-                    },
-                    {
-                        name: 'Tango',
-                        speciality: 'Conditionals',
-                        show: false
-                    },
-                    {
-                        name: 'Kami',
-                        speciality: 'Webpack',
-                        show: false
-                    },
-                    {
-                        name: 'Yoshi',
-                        speciality: 'Data Recollection',
-                        show: false
-                    }
-
-                ]
+                // El componente padre le pasa los datos que el posee y con esto hace de cuenta como si dichos datos hubieran sido declarados directamente aca
             }
         },
     }
