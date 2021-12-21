@@ -6,6 +6,8 @@
 </template>
 
 <script>
+import {bus} from '../main';
+
     export default ({
         props: {
             title: {
@@ -20,7 +22,10 @@
         methods: {
             cambiarNombre: function () {
                 //para emitir un evento desde una funcion hacemos uso del "$emit('queLLamaremosConElEvento', queParametroEnviaremos)"
-                this.$emit('cambiarNombre', 'Cambiando el texto porque si');
+                // this.$emit('cambiarNombre', 'Cambiando el texto porque si');
+                this.title='Titulo cambiado y que?'
+                //para hacer uso del bus, generamos un evento el cual sera escuchado en el componente en el que se encuentre integrado en este caso se importo en el footer para que al emitir el evento este mismo se actualice 
+                bus.$emit('cambiarNombre', 'Cambiando el texto del footer')
             }
         }
     })

@@ -7,6 +7,7 @@
 </template>
 
 <script>
+import {bus} from '../main'
     export default {
         props: {
             title: {
@@ -18,6 +19,13 @@
                 copy: 'Esta pagina se encuentra protegida por derechos de autor'
             }
         },
+        //Ciclo de vida del componente, creacion del componente
+        created(){
+            // dado a que el bus nos indica que trae
+            bus.$on('cambiarNombre', (data) => {
+                this.title = data;
+            })
+        }
     }
 </script>
 <style scoped>

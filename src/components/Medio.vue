@@ -12,12 +12,12 @@
         <button v-on:click="deleteNinja">Delete Ninja</button>
         <hr>
         <!-- Al agregar dos elementos referenciando al mismo prop al oprimir el boton eliminar ninja este eliminara dicha posicion del arreglo pero al haber dos elementos referenciando al mismo prop entonces estos elemetos se veran afectados al mimsmo tiempo -->
-        <ul>
+        <!-- <ul>
             <li v-for="ninja in ninjas" :key="ninja" v-on:click="ninja.show=!ninja.show">
                 <h2>Name: {{ninja.name}}</h2>
                 <h3 v-show="ninja.show">speciality: {{ninja.speciality}} </h3>
             </li>
-        </ul>
+        </ul> -->
         <!-- con esta funcion demostramos la forma en como se afectan los props cuando son basados unicamente en referecia, con solo esta funcion podemos eliminar todos los elementos del prop o algo asi -->
         <button v-on:click="deleteNinja">Delete Ninja</button>
     </div>
