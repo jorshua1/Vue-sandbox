@@ -1,5 +1,7 @@
 <template>
     <footer>
+        <!-- obtenemos la data pasada por el componente padre y al ser un dato de tipo primitivo podemos modificarla sin que esta afecte al prop referenciado en otros componentes
+        se puede comprobar tocando el titulo del archivo app ya renderizado -->
         <small> {{title}} </small>
     </footer>
 </template>

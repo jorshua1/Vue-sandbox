@@ -1,5 +1,6 @@
 <template>
     <header>
+        <!-- al momento que se toque el titulo el ejecutara el evento el cual el componente padre escuchara y ejecutara un metodo que el posee cambiando su nombre -->
         <h1 v-on:click="cambiarNombre"> {{title}} </h1>
     </header>
 </template>
@@ -18,7 +19,8 @@
         },
         methods: {
             cambiarNombre: function () {
-                this.title = 'que no se podia cambiar, y eso quien lo decidio?';
+                //para emitir un evento desde una funcion hacemos uso del "$emit('queLLamaremosConElEvento', queParametroEnviaremos)"
+                this.$emit('cambiarNombre', 'Cambiando el texto porque si');
             }
         }
     })
