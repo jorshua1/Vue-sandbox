@@ -10,8 +10,8 @@ import router from './router'
 
 Vue.config.productionTip = false
 
-//Creacion de un bus de eventos, aka una nueva instacia
-export const bus = new Vue();
+// //Creacion de un bus de eventos, aka una nueva instacia
+// export const bus = new Vue();
 
 new Vue({
   router,
