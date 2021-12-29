@@ -1,14 +1,17 @@
 <template>
 <div id="App">
-  <add-blog></add-blog>
+  <show-blogs></show-blogs>
 </div>
 </template>
 <script>
 import addBlog from './components/addBlog'
+import showBlogs from './components/showBlogs'
+
 
 export default ({
   components: {
-    'add-blog': addBlog
+    'add-blog': addBlog,
+    'show-blogs': showBlogs
   },
   data() {
     return {
@@ -24,6 +27,7 @@ export default ({
 <style >
 body{
   margin: 0;
+  background-color: #32373B;
   font-family: Arial, Helvetica, sans-serif;
 }
 
